@@ -1,0 +1,35 @@
+<tr class="border-b" data-test-country-item>
+  <td class="border-x p-4 text-center" data-test-country-item-sn>
+    {{@country.node.id}}
+  </td>
+  <td class="border-x p-4 text-center">
+    <LinkTo
+      class="underline"
+      @route="country"
+      @model={{@country.node.id}}
+      data-test-country-item-id
+    >
+      {{@country.node.name}}
+    </LinkTo>
+  </td>
+  <td
+    class="border-x p-4 text-center"
+    data-test-country-item-capital
+  >{{@country.node.capital}}</td>
+  <td
+    class="border-x p-4 text-center"
+    data-test-country-item-currency
+  >{{@country.node.currency}}</td>
+  <td
+    class="border-x p-4 text-center"
+    data-test-country-item-region
+  >{{@country.node.region}}</td>
+  <td
+    class="border-x p-4 text-center"
+    data-test-country-item-subregion
+  >{{@country.node.subregion}}</td>
+  <td
+    class="border-x p-4 text-center"
+    data-test-country-item-emoji
+  >{{@country.node.emoji}}</td>
+</tr>

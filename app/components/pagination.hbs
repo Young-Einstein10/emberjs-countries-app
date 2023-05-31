@@ -1,0 +1,22 @@
+<div class="flex items-center justify-center mt-6" data-test-pagination>
+  <div class="flex items-center gap-4">
+    <button
+      type="button"
+      class="relative block rounded px-3 py-1.5 text-md bg-neutral-700 text-white disabled:bg-neutral-500"
+      disabled={{if @page.hasPreviousPage false true}}
+      {{on "click" @onPrevious}}
+      data-test-prev-btn
+    >
+      Previous
+    </button>
+    <button
+      type="button"
+      class="relative block rounded px-3 py-1.5 text-md bg-neutral-700 text-white disabled:bg-neutral-500"
+      disabled={{if @page.hasNextPage false true}}
+      {{on "click" @onNext}}
+      data-test-next-btn
+    >
+      Next
+    </button>
+  </div>
+</div>

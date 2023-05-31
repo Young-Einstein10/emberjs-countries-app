@@ -1,0 +1,16 @@
+<section class="pb-8">
+  <header class="container mx-auto py-10 text-center flex items-center">
+    <nav>
+      <button
+        type="button"
+        class="underline text-sm"
+        {{on "click" this.goBack}}
+        data-test-go-back
+      >
+        Back
+      </button>
+    </nav>
+    <h2 class="text-4xl flex-1" data-test-header>Country Details</h2>
+  </header>
+  <Country @country={{@model}} />
+</section>

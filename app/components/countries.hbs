@@ -1,0 +1,26 @@
+<div class="container mx-auto">
+  <table class="table-auto container mx-auto" data-test-countries>
+    <thead>
+      <tr class="border">
+        <th class="p-4 border-l">S/N</th>
+        <th class="p-4 border-l">Name</th>
+        <th class="p-4 border-l">Capital</th>
+        <th class="p-4 border-l">Currency</th>
+        <th class="p-4 border-l">Region</th>
+        <th class="p-4 border-l">Sub-Region</th>
+        <th class="p-4 border-l">Flag</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each @countries.edges as |country|}}
+        <Countries::Item @country={{country}} />
+      {{/each}}
+    </tbody>
+  </table>
+
+  <Pagination
+    @page={{@countries.pageInfo}}
+    @onPrevious={{fn this.handlePrevious @countries.pageInfo}}
+    @onNext={{fn this.handleNext @countries.pageInfo}}
+  />
+</div>

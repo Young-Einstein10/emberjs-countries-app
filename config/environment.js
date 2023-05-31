@@ -18,6 +18,16 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    apollo: {
+      apiURL: 'https://api.geographql.rudio.dev/graphql',
+
+      // Optionally, set the credentials property of the Fetch Request interface
+      // to control when a cookie is sent:
+      // requestCredentials: 'same-origin', // other choices: 'include', 'omit'
+
+      // Optionally, define which service a query manager should use by default:
+      // defaultQueryManagerService: 'my-custom-apollo-service',
+    },
   };
 
   if (environment === 'development') {

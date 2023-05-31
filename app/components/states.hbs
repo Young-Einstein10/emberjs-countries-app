@@ -1,0 +1,22 @@
+<table class="table-auto container mx-auto" data-test-country-states>
+  <thead>
+    <tr class="border">
+      <th class="p-4 border-l">S/N</th>
+      <th class="p-4 border-l">Name</th>
+      <th class="p-4 border-l">State Code</th>
+      <th class="p-4 border-l">Latitude</th>
+      <th class="p-4 border-l">Longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each @states.edges as |state index|}}
+      <States::Item @index={{fn this.plusOne index}} @state={{state}} />
+    {{/each}}
+  </tbody>
+</table>
+
+<Pagination
+  @page={{@states.pageInfo}}
+  @onPrevious={{fn this.handlePrevious @states.pageInfo}}
+  @onNext={{fn this.handleNext @states.pageInfo}}
+/>

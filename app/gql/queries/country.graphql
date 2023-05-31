@@ -1,0 +1,32 @@
+query FetchCountry($id: Int, $page: PaginationInput) {
+  country(id: $id) {
+    id
+    name
+    capital
+    currency
+    currency_symbol
+    phone_code
+    states(page: $page) {
+      ...stateFields
+    }
+  }
+}
+
+fragment stateFields on StateConnection {
+  totalCount
+  pageInfo {
+    hasPreviousPage
+    hasNextPage
+    startCursor
+    endCursor
+  }
+  edges {
+    node {
+      id
+      name
+      state_code
+      latitude
+      longitude
+    }
+  }
+}

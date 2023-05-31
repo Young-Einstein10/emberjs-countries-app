@@ -1,0 +1,28 @@
+# Write your query or mutation here
+query Countries($page: PaginationInput) {
+  countries(page: $page) {
+    totalCount
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    edges {
+      cursor
+      node {
+        id
+        name
+        currency
+        currency_symbol
+        capital
+        region
+        subregion
+        emoji
+        iso2
+        iso3
+        numeric_code
+      }
+    }
+  }
+}
